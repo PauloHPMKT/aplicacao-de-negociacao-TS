@@ -1,19 +1,14 @@
 export class Negociacao {
     //explicitando o tipo do modificador no construtor da classe isso indica para o TS que 
     //ele criará uma propriedade em sua classe com o mesmo nome do parametro de seu construtor
-    constructor(_data, _quantidade, _valor) {
+    constructor(_data, quantidade, valor) {
         this._data = _data;
-        this._quantidade = _quantidade;
-        this._valor = _valor;
+        this.quantidade = quantidade;
+        this.valor = valor;
     }
-    //criando geters para acessar os atributos privados da classe
+    //programação defensiva: getter cria um clone protegendo o conteudo da propriedade
     get data() {
-        return this._data;
-    }
-    get quantidade() {
-        return this._quantidade;
-    }
-    get valor() {
-        return this._valor;
+        const data = new Date(this._data.getTime());
+        return data;
     }
 }

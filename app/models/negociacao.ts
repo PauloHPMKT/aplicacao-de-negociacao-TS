@@ -4,12 +4,19 @@ export class Negociacao {
     //ele criará uma propriedade em sua classe com o mesmo nome do parametro de seu construtor
     constructor (
         private _data: Date, 
-        private _quantidade: number, 
-        private _valor: number
+        public readonly quantidade: number, 
+        public readonly valor: number
     ) {}
 
-    //criando geters para acessar os atributos privados da classe
+    //programação defensiva: getter cria um clone protegendo o conteudo da propriedade
     get data(): Date {
+        const data = new Date(this._data.getTime())
+        return data;
+    }
+
+    //criando geters para acessar os atributos privados da classe
+    //valores substituidos por valores readonly no constructor
+    /*get data(): Date {
         return this._data
     }
     
@@ -19,7 +26,7 @@ export class Negociacao {
     
     get valor(): number {
         return this._valor
-    }
+    }*/
 }    
 
 
