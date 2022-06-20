@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+        "outDir": "dist/js",
+        "target": "ES6",
+        "noEmitOnError": true // inibe a criação de uma pasta js no diretorio dist quando houver erros
+    },
+    "include": ["app/**/*"]
+}
