@@ -1,14 +1,12 @@
 export class Negociacao {
-    private _data: {}
-    private _quantidade: number
-    private _valor: number
-    private _volume: number
-
-    constructor (data, quantidade, valor, volume) {
+    private _data: Date;
+    private _quantidade: number;
+    private _valor: number;
+    
+    constructor (data: Date, quantidade: number, valor: number) {
         this._data = data,
         this._quantidade = quantidade,
         this._valor = valor
-        this._volume = volume
     }
 
     //criando geters para acessar os atributos privados da classe
@@ -23,11 +21,6 @@ export class Negociacao {
     get valor() {
         return this._valor
     }
-
-    get volume() {
-        return this._quantidade * this._valor 
-    }
-
 }    
 
 
